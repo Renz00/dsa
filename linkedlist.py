@@ -85,14 +85,27 @@ class LinkedList:
             self.head = None
             self.tail = None
         return temp
-
+    
+    def get_value(self, index):
+        if self.length == 0:
+            return None
         
+        temp = self.head
+        if index < 0 or index > self.length-1: # handle index out of bounds
+            return None
+        
+        for _ in range(index):
+            temp = temp.next # set the next node to temp per iteration
+        return temp # return node at index
+    
+    def set_value()
                 
         
 ll = LinkedList(1)
-ll.print_list()
-ll.pop_first()
-ll.print_list()
+ll.append(2)
+ll.append(3)
+# ll.print_list()
+print(ll.get_value(3))
         
     
     
