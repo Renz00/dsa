@@ -90,13 +90,32 @@ class LinkedList:
         if self.length == 0:
             return None
         
-        temp = self.head
         if index < 0 or index > self.length-1: # handle index out of bounds
             return None
         
+        temp = self.head
         for _ in range(index):
             temp = temp.next # set the next node to temp per iteration
         return temp # return node at index
+    
+    def set_value(self, index, new_value):
+        new_node = Node(new_value)
+        
+        if self.length == 0:
+            return None
+        
+        if index < 0 or index > self.length-1: # handle index out of bounds
+            return None
+        
+        temp = self.head
+        prev_node = None
+        for _ in range(index):
+            prev_node = temp
+            temp = temp.next # set the next node to temp per iteration
+        
+        new_node.next = temp.next # replace next node for the new node
+        temp = new_node # temp node with new node
+        prev_node.next = new_node # set previous node's next point to the new node
     
     def set_value()
                 
